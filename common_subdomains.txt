@@ -1,1 +1,88 @@
+# Common Subdomains for KAIROS Reconnaissance
+# One subdomain per line. Lines starting with # are comments.
 
+www
+mail
+ftp
+admin
+test
+dev
+api
+shop
+blog
+staging
+beta
+app
+my
+support
+secure
+static
+cdn
+portal
+owa
+m
+jira
+confluence
+git
+svn
+files
+assets
+images
+docs
+webmail
+remote
+vpn
+internal
+corp
+devops
+uat
+accounts
+autodiscover
+backup
+cms
+db
+demo
+download
+fileserver
+forum
+gateway
+help
+intranet
+ldap
+logs
+metrics
+monitor
+news
+payment
+proxy
+sso
+stats
+store
+survey
+upload
+video
+wiki
+chat
+cloud
+dashboard
+auth
+identity
+sentry
+status
+careers
+community
+customer
+developer
+graphql
+ads
+app-ads
+assets-origin
+origin
+webservice
+ws
+
+# Add more custom subdomains below if needed
+# Example:
+# myapp
+# service1
+# customerportal
