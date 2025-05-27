@@ -1,0 +1,9 @@
+aiohttp>=3.8.0,<4.0.0
+beautifulsoup4>=4.10.0,<5.0.0
+dnspython>=2.1.0,<3.0.0
+requests>=2.25.0,<3.0.0
+python-nmap>=0.7.0,<0.8.0
+python-whois>=0.8.0,<0.9.0
+Wappalyzer>=0.5.0,<0.6.0
+GitPython>=3.1.0,<4.0.0
+tqdm>=4.60.0,<5.0.0
