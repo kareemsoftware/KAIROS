@@ -1,1 +1,214 @@
 
+{
+    "scanner_version": "3.5 Zenith",
+    "default_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0 KAIROS/3.5",
+    "request_timeout_seconds": 20,
+    "max_concurrent_requests": 15,
+    "dns_timeout_seconds": 5,
+    "common_subdomains_file": "common_subdomains.txt",
+    "default_common_subdomains": [
+        "www", "mail", "ftp", "admin", "test", "dev", "api", "shop", "blog", "staging", "beta",
+        "app", "my", "support", "secure", "static", "cdn", "portal", "owa", "m", "jira",
+        "confluence", "git", "svn", "files", "assets", "images", "docs", "webmail",
+        "remote", "vpn", "internal", "corp", "devops", "uat", "accounts", "autodiscover",
+        "backup", "cms", "db", "demo", "download", "fileserver", "forum", "gateway", "help",
+        "intranet", "ldap", "logs", "metrics", "monitor", "news", "payment", "proxy", "sso",
+        "stats", "store", "survey", "upload", "video", "wiki", "chat", "cloud", "dashboard",
+        "auth", "identity", "sentry", "status", "careers", "community", "customer", "developer",
+        "graphql", "ads", "app-ads", "assets-origin", "origin", "webservice", "ws"
+    ],
+    "sensitive_paths_categories": {
+        "config_files": [
+            ".env", ".env.local", ".env.development", ".env.staging", ".env.production", "config.php", "wp-config.php",
+            "settings.php",
+            "localsettings.php", "web.config", "database.yml", "configuration.php", "appsettings.json",
+            "application.ini", "settings.ini", "config.json", "secrets.json", "credentials.json", "params.php",
+            ".htpasswd", ".htaccess", "docker-compose.yml", "Procfile", "nginx.conf", "httpd.conf", "apache2.conf",
+            "config/config.ini", "config/database.php", "app/config/parameters.yml", "app/config/local.php",
+            "config/secrets.yml", "conf/server.xml", "server.xml", "context.xml", "security.xml", "credentials.xml",
+            "connectionstrings.config"
+        ],
+        "backup_archives": [
+            "backup.sql", "backup.zip", "dump.sql", "site.tar.gz", "backup.tar.gz", "database.sql.gz",
+            "db.zip", "_backup.zip", "data.rar", "website_backup.7z", "backup.bak", "site.bak", "db.bak",
+            "backup.sql.zip", "db_backup.sql", "backup.tgz", "data.sql", "full_backup.zip", "site_archive.zip",
+            "backup.mdb", "database.mdb"
+        ],
+        "log_files": [
+            "access.log", "error.log", "debug.log", "app.log", "server.log", "audit.log", "catalina.out",
+            "system.log", "security.log", "php_errors.log", "laravel.log", "sql.log", "queries.log",
+            "trace.axd", "production.log", "development.log", "nohup.out"
+        ],
+        "exposed_services_info": [
+            "phpinfo.php", "info.php", "test.php", "status.php", "server-status", "server-info", "status",
+            "/jolokia/list",
+            "/actuator", "/actuator/health", "/actuator/info", "/actuator/env", "/actuator/metrics",
+            "/actuator/httptrace", "/actuator/loggers", "/actuator/threaddump", "/actuator/heapdump",
+            "/actuator/beans", "/actuator/configprops", "/actuator/mappings",
+            "/api/swagger.json", "/swagger-ui.html", "swagger.json", "openapi.json", "api-docs",
+            "license.php", "readme.html", "RELEASE_NOTES.txt", "CHANGELOG.md", "INSTALL.md", "UPGRADE.txt",
+            "/api/v2/api-docs", "/swagger/v1/swagger.json", "/v2/api-docs", "/v3/api-docs",
+            "composer.json", "composer.lock", "package.json", "package-lock.json", "yarn.lock", "Gemfile",
+            "Gemfile.lock",
+            "requirements.txt", "Pipfile", "Pipfile.lock", "build.gradle", "pom.xml", "ads.txt", "app-ads.txt"
+        ],
+        "version_control_exposed": [
+            ".git/config", ".git/HEAD", ".git/logs/HEAD", ".git/index", ".git/FETCH_HEAD", ".git/refs/heads/master",
+            ".git/refs/heads/main", ".git/ORIG_HEAD", ".git/COMMIT_EDITMSG", ".git/description", ".git/hooks/",
+            ".git/info/exclude", ".git/packed-refs",
+            ".svn/entries", ".svn/wc.db", ".svn/pristine/", ".svn/all-wcprops", ".svn/wcprops/",
+            ".hg/hgrc", ".hg/store/00manifest.i", ".hg/bookmarks", ".hg/branchmap.cache",
+            ".bzr/README", ".bzr/checkout.conf", ".bzr/branch/"
+        ],
+        "common_admin_interfaces": [
+            "admin/", "administrator/", "login/", "wp-admin/", "admin.php", "admin/login.php",
+            "phpmyadmin/", "pma/", "cpanel/", "webadmin/", "admin_area/", "controlpanel/", "manage/",
+            "user/login", "admin/dashboard", "backend/", "secure_admin/", "admincp/", "webpanel/",
+            "django-admin/", "rails/info/properties", "admin123/", "secret-admin/", "admin.html", "login.html"
+        ],
+        "sensitive_directories": [
+            "includes/", "uploads/", "files/", "backup/", "temp/", "tmp/", "private/", "secret/", "admin_files/",
+            "config/", "cgi-bin/", "data/", "db/", "protected/", "logs/", "temp_files/", "bak/",
+            "vendor/", "node_modules/", "storage/logs", "app/etc", "sites/default/files", "sites/default/private",
+            "WEB-INF/", "WEB-INF/web.xml", "WEB-INF/classes/", "assets/private", ".ssh/", ".aws/", ".config/",
+            "etc/", "conf/", "settings/"
+        ],
+        "security_txt_paths_list": ["/.well-known/security.txt", "/security.txt"]
+    },
+    "malware_php_signatures": [
+        "eval\\s*\\(\\s*base64_decode\\s*\\(", "shell_exec\\s*\\(", "system\\s*\\(", "passthru\\s*\\(",
+        "pcntl_exec\\s*\\(", "popen\\s*\\(", "proc_open\\s*\\(", "assert\\s*\\(", "create_function\\s*\\(",
+        "php_uname\\s*\\(", "fsockopen\\s*\\(", "pfsockopen\\s*\\(",
+        "preg_replace\\s*\\(\\s*['\"].*/e['\"]\\s*,",
+        "\\$\\_(GET|POST|REQUEST|COOKIE|FILES)\\s*\\[\\s*['\"].*['\"]\\s*\\]\\s*=\\s*.*\\$\\_",
+        "gz(un)?inflate\\s*\\(\\s*base64_decode\\s*\\(",
+        "move_uploaded_file\\s*\\(\\s*\\$\\_FILES\\[.+?\\]['tmp_name']\\s*,\\s*['\"].+\\.(php|phtml|phar|php[3-7]|shtml|cgi|pl|jsp|asp|aspx)['\"]",
+        "<\\?php\\s+include\\s+['\"]\\w+\\.txt['\"]\\s*;", "phpjm\\.com", "c99shell", "r57shell"
+    ],
+    "malware_js_signatures": [
+        "eval\\s*\\(", "document\\.write\\s*\\(.*%3Cscript", "unescape\\s*\\(", "decodeURIComponent\\s*\\(",
+        "String\\.fromCharCode\\s*\\(", "(?i)iframe.*src\\s*=\\s*['\"](?:javascript:|data:text/html|http[s]?://[^/]*evil)",
+        "crypto-js\\.js", "miner\\.js", "coinhive\\.min\\.js", "webminerpool\\.js", "jsecoin\\.com",
+        "\\.innerHTML\\s*=\\s*.*<script>", "appendChild\\s*\\(.*createElement\\('script'\\)",
+        "ws://[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}",
+        "load\\s*\\(\\s*['\"].*evil", "atob\\s*\\("
+    ],
+    "api_key_patterns": {
+        "Google API Key": "AIza[0-9A-Za-z\\\\-_]{35}",
+        "Google OAuth ID": "[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com",
+        "Google Cloud Platform API Key": "AIza[0-9A-Za-z\\\\-_]{35}",
+        "Firebase API Key": "AIza[0-9A-Za-z\\\\-_]{35}",
+        "AWS Access Key ID": "AKIA[0-9A-Z]{16}",
+        "AWS Secret Access Key (Full)": "(?<![A-Za-z0-9/+=])(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}(?![A-Za-z0-9/+=])",
+        "AWS Secret Key": "(?<![A-Za-z0-9/+=])[A-Za-z0-9/+=]{40}(?![A-Za-z0-9/+=])",
+        "GitHub Token": "gh[pousr]_[0-9a-zA-Z]{36,76}",
+        "Slack Token (Legacy)": "xox[pbar]-[0-9]{10,13}-[0-9]{10,13}-[0-9]{10,13}-[a-fA-F0-9]{32}",
+        "Slack Webhook": "https?://hooks\\.slack\\.com/services/T[a-zA-Z0-9_]{8,12}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{24}",
+        "Stripe API Key": "(sk|pk)_(live|test)_[0-9a-zA-Z]{24,}",
+        "Twilio SID": "AC[a-f0-9]{32}",
+        "Twilio Auth Token": "SK[a-f0-9]{32}",
+        "SendGrid API Key": "SG\\.[0-9A-Za-z\\\\-_]{22}\\.[0-9A-Za-z\\\\-_]{43}",
+        "Mailgun API Key": "key-[0-9a-zA-Z]{32}",
+        "MailChimp API Key": "[0-9a-f]{32}-us[0-9]{1,2}",
+        "Square Access Token": "sq0atp-[0-9A-Za-z\\-_]{22}",
+        "Square OAuth Secret": "sq0csp-[0-9A-Za-z\\-_]{43}",
+        "PayPal/Braintree Access Token": "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}",
+        "Artifactory API Key": "\\bAKC[a-zA-Z0-9]{10,}",
+        "Cloudinary URL": "cloudinary://[0-9]{15}:[0-9A-Za-z_-]{27}@[a-z0-9_-]+",
+        "Heroku API Key (UUID)": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+        "New Relic User API Key": "NRAK-[A-Z0-9]{27}",
+        "OpenAI API Key": "sk-[A-Za-z0-9]{48}",
+        "Generic JWT": "ey[A-Za-z0-9-_=]+\\.ey[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_.+/=]*"
+    },
+    "js_interesting_patterns": {
+        "Cloud Storage URL (S3)": "['\"](s3://[a-zA-Z0-9.-]+/[^'\"\\s]+|https?://[a-zA-Z0-9.-]+\\.s3\\.[a-zA-Z0-9.-]+\\.amazonaws\\.com/[^'\"\\s]*)['\"]",
+        "Cloud Storage URL (GCS)": "['\"](gs://[a-zA-Z0-9.-]+/[^'\"\\s]+|https?://storage\\.googleapis\\.com/[a-zA-Z0-9.-]+/[^'\"\\s]*)['\"]",
+        "Cloud Storage URL (Azure Blob)": "['\"](https?://[a-zA-Z0-9.-]+\\.blob\\.core\\.windows\\.net/[^'\"\\s]+)['\"]",
+        "Internal IP Address": "['\"](10\\.(?:[0-9]{1,3}\\.){2}[0-9]{1,3}|192\\.168\\.(?:[0-9]{1,3}\\.)[0-9]{1,3}|172\\.(?:1[6-9]|2[0-9]|3[0-1])\\.(?:[0-9]{1,3}\\.)[0-9]{1,3})['\"]",
+        "Developer Comment (TODO/FIXME)": "//\\s*(TODO|FIXME|HACK|XXX|NOTE|OPTIMIZE):?\\s*(.+)",
+        "Potential Endpoint Path": "['\"](/api(?:/v[0-9]+)?/[^'\"\\s?#]+|/rest/[^'\"\\s?#]+|/service/[^'\"\\s?#]+|/graphql(?:/[^'\"\\s?#]+)?|/_next/data/[^'\"\\s?#]+|/\\.netlify/functions/[^'\"\\s?#]+)['\"]",
+        "WebSocket URL": "['\"](wss?://\\S+?)['\"]",
+        "Firebase Database URL": "['\"](https?://[a-zA-Z0-9_-]+\\.firebaseio\\.com)['\"]"
+    },
+    "dns_records_to_query": ["A", "AAAA", "CNAME", "MX", "NS", "TXT", "SOA", "SRV", "CAA", "DNSKEY", "SPF", "DMARC",
+                             "PTR", "HINFO", "RP"],
+    "common_ports_to_scan": "21,22,23,25,53,80,110,111,135,139,143,443,445,465,587,993,995,1080,1433,1521,1723,2049,3306,3389,5432,5900,6379,8000,8008,8080,8443,8888,9000,9090,9200,9300,11211,27017,27018,50000,50070",
+    "cms_specific_checks": {
+        "WordPress": {
+            "paths": ["/wp-login.php", "/xmlrpc.php", "/wp-json/", "/wp-content/debug.log", "/wp-cron.php",
+                      "/wp-config.php.bak", "/wp-config.php~", "/wp-admin/install.php", "/readme.html", "/license.txt"],
+            "signatures_in_html": ["wp-content/themes", "wp-includes", "Yoast SEO", "Rank Math", "Elementor",
+                                   "WooCommerce"],
+            "version_pattern": [
+                "wp-includes/js/wp-emoji-release\\.min\\.js\\?ver=([0-9\\.]+)",
+                "<meta name=\"generator\" content=\"WordPress ([0-9\\.]+)\"",
+                "wp-includes/css/dist/block-library/style.min.css\\?ver=([0-9\\.]+)"
+            ],
+            "vulnerable_plugins_themes_check": true
+        },
+        "Joomla": {
+            "paths": ["/administrator/", "/configuration.php-dist", "/README.txt", "/LICENSE.txt",
+                      "/administrator/manifests/files/joomla.xml", "/language/en-GB/en-GB.xml"],
+            "signatures_in_html": ["com_content", "Joomla! - Open Source Content Management", "media/jui/js",
+                                   "templates/system/css/system.css"],
+            "version_pattern": [
+                "<meta name=\"generator\" content=\"Joomla! ([0-9\\.]+) Platform\"",
+                "/media/cms/js/core\\.js\\?([a-f0-9]+)",
+                "Joomla! (\\d+\\.\\d+\\.\\d+) - Open Source Content Management"
+            ]
+        },
+        "Drupal": {
+            "paths": ["/user/login", "/CHANGELOG.txt", "/sites/default/settings.php", "/core/INSTALL.txt",
+                      "/update.php", "/MAINTAINERS.txt"],
+            "signatures_in_html": ["Drupal\\.settings", "sites/default/files", "X-Generator: Drupal",
+                                   "misc/drupal.js"],
+            "version_pattern": [
+                "<meta name=\"Generator\" content=\"Drupal ([0-9\\.]+)",
+                "Drupal ([0-9\\.]+) \\(http",
+                "misc/drupal\\.js\\?v=([0-9\\.]+)"
+            ]
+        },
+        "Magento": {
+            "paths": ["/downloader/", "/errors/report.php", "/RELEASE_NOTES.txt", "/app/etc/local.xml",
+                      "/magento_version"],
+            "signatures_in_html": ["skin/frontend/", "Magento", "static/version", "requirejs/mage"],
+            "version_pattern": [
+                "Magento_Theme/js/responsive\\.js\\?version=([0-9\\.]+)",
+                "<meta name=\"format-detection\" content=\"telephone=no\">\\s*<script type=\"text/x-magento-init\">",
+                "MAGENTO_VERSION = '([0-9\\.]+)'"
+            ]
+        },
+        "Shopify": {
+            "paths": ["/admin", "/cart.js", "/password", "/collections.json"],
+            "signatures_in_html": ["cdn\\.shopify\\.com", "Shopify\\.theme", "ShopifyAnalytics", "shopify-cloud"],
+            "version_pattern": []
+        }
+    },
+    "security_headers_info": {
+        "Strict-Transport-Security": "Instructs browsers to only connect via HTTPS. Check for 'max-age', 'includeSubDomains', 'preload'. High max-age (e.g., 31536000) is recommended.",
+        "Content-Security-Policy": "Controls resources the browser is allowed to load. Complex to evaluate automatically, but presence is good. Check for 'unsafe-inline' or 'unsafe-eval' which weaken it.",
+        "Content-Security-Policy-Report-Only": "Allows experimenting with CSP. Issues are reported but not blocked.",
+        "X-Frame-Options": "Prevents clickjacking. Should be 'DENY' or 'SAMEORIGIN'. 'ALLOW-FROM uri' is deprecated.",
+        "X-Content-Type-Options": "Prevents MIME-sniffing. Should be 'nosniff'.",
+        "Referrer-Policy": "Controls how much referrer information is sent. 'no-referrer', 'strict-origin-when-cross-origin', or 'same-origin' are good choices.",
+        "Permissions-Policy": "Controls browser features available to the page. Presence and restrictive policies are good.",
+        "X-XSS-Protection": "Deprecated by modern browsers in favor of CSP, but '1; mode=block' was the strongest. If present, ensure it's not '0'.",
+        "Set-Cookie": "Analyze for 'HttpOnly', 'Secure', 'SameSite' attributes (Strict or Lax preferred). Check 'Domain' and 'Path' for scope.",
+        "Cross-Origin-Opener-Policy": "Protects against cross-origin attacks. 'same-origin' is a common strong value.",
+        "Cross-Origin-Embedder-Policy": "Controls embedding of cross-origin resources. 'require-corp' is a common strong value.",
+        "Cross-Origin-Resource-Policy": "Controls how cross-origin resources can be requested. 'same-origin' or 'same-site' are common."
+    },
+    "wayback_machine_limit": 25,
+    "crtsh_timeout_seconds": 20,
+    "js_analysis_max_file_size_kb": 1024,
+    "enable_nmap_scan": true,
+    "enable_whois_lookup": true,
+    "enable_subdomain_bruteforce": true,
+    "enable_crtsh_subdomain_search": true,
+    "enable_wayback_machine_scan": true,
+    "enable_js_file_analysis": true,
+    "enable_error_page_analysis": true,
+    "fuzzing_wordlist_file": "common_paths_fuzz.txt",
+    "fuzzing_apply_common_extensions": [".php", ".html", ".txt", ".bak", ".old", ".config", ".json", ".xml", ".log", ".aspx", ".jsp", ".env", ".ini", ".yml", ".yaml"],
+    "enable_directory_file_fuzzing": false
+}
