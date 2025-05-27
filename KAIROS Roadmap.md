@@ -88,7 +88,8 @@ This roadmap is a living document and may be subject to change based on communit
 
 ## How to Contribute
 
-We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) (you'll need to create this file too, detailing contribution guidelines) for more information on how to get involved. You can also:
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) 
+for more information on how to get involved. You can also:
 
 *   **Report Bugs:** If you find a bug, please open an issue with detailed steps to reproduce.
 *   **Suggest Features:** Have a great idea? Open an issue and tag it as an "enhancement" or "feature request."
