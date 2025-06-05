@@ -65,7 +65,7 @@
         },
         "disable_all_external_apis": false
     },
-    "common_subdomains_file": "wordlists/kairos_common_subdomains_v5.txt",
+    "common_subdomains_file": "common_subdomains.txt",
     "default_common_subdomains": [
         "www", "mail", "ftp", "admin", "test", "dev", "api", "shop", "blog", "staging", "beta", "prod", "production",
         "app", "my", "support", "secure", "static", "cdn", "portal", "owa", "m", "jira", "confluence", "gitlab",
