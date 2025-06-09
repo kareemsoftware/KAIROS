@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  kairos-core:
+    build:
+      context: ./kairos_core
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./kairos_core/app:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY} # Keep if core needs to call gateway directly for other reasons
+    depends_on:
+      - rabbitmq
+      - redis
+    networks:
+      - kairos_net
+    # The CMD in Dockerfile (uvicorn) will run by default.
+
+  kairos-worker: # New service for Celery worker
+    build:
+      context: ./kairos_core # Uses the same Docker image as kairos-core
+    volumes:
+      - ./kairos_core/app:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY} # If tasks need it
+    depends_on:
+      - rabbitmq
+      - redis
+      - kairos-core # Optional: ensure web app is up, though not strictly necessary for worker
+    command: celery -A app.celery_app worker -l info -Q kairos_tasks # Example queue name
+    networks:
+      - kairos_net
+
+  llm-gateway:
+    build:
+      context: ./llm_gateway
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./llm_gateway/app:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    networks:
+      - kairos_net
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - kairos_net
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+
+  redis:
+    image: redis:7.2-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - kairos_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+
+networks:
+  kairos_net:
+    driver: bridge
